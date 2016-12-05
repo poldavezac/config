@@ -1,5 +1,5 @@
 [alias]
-	tree = log --graph --all --format='%C(cyan dim) %p %Cred %h %C(white dim) %s %Cgreen(%cr)%C(cyan dim) <%an>%C(bold yellow)%d%Creset'
+	tree = log --graph --all --format='%C(cyan dim) %h %C(white dim) %s %Cgreen(%cr)%C(cyan dim) <%an>%C(bold yellow)%d%Creset'
 [credential]
     helper = cache --timeout=86400
 

@@ -14,6 +14,7 @@ from . import matrixlib as _mat
 from .matrixlib import *
 from .compat import long as long
 
+def median(*_, **_2): ...
 def pkgload(*packages, **options): ...
 
 # Names in __all__ with no definition:

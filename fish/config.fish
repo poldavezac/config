@@ -6,7 +6,7 @@ set -x MYPYPATH /home/pol/.config/mypy/
 set -x EDITOR nvim
 set -x QT_QPA_PLATFORMTHEME
 set -x JULIA_LOAD_PATH  ./ $JULIA_LOAD_PATH 
-source (conda info --root)/bin/conda.fish
+source /home/pol/.config/fish/conda.fish
 
 set normal (set_color normal)
 set magenta (set_color magenta)
@@ -31,3 +31,6 @@ set __fish_git_prompt_char_untrackedfiles '☡ '
 set __fish_git_prompt_char_stashstate '↩ '
 set __fish_git_prompt_char_upstream_ahead '+'
 set __fish_git_prompt_char_upstream_behind '-'
+
+alias win10 "rdesktop -u DEVS -g 95% -PKD 192.168.1.53"
+alias win07 "rdesktop -u devtest -g 95% -PKD 192.168.1.66"
