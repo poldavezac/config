@@ -1,0 +1,13 @@
+{
+  "load_extensions": {
+    "nb_anacondacloud/main": true,
+    "nb_conda/main": true,
+    "jupyter-js-widgets/extension": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "nbpresent/js/nbpresent.min": true,
+    "codefolding/main": true,
+    "navigation-hotkeys/main": true,
+    "python-markdown/main": true,
+    "init_cell/main": true
+  }
+}
