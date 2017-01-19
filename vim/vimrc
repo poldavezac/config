@@ -1,0 +1,78 @@
+filetype off
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#rc("~/.config/nvim/bundle")
+call vundle#begin()
+Plugin 'Julialang/julia-vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'fugitive.vim'
+Plugin 'Gundo'
+Plugin 'pyclewn'
+Plugin 'https://github.com/junegunn/vim-easy-align.git'
+Plugin 'https://github.com/benekastah/neomake.git'
+Plugin 'gilligan/vim-lldb'
+call vundle#end()
+filetype plugin indent on
+
+
+set ruler
+syntax enable
+set hlsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set ignorecase
+set smartcase
+set notr
+set wildmenu
+set nobackup
+set history=999
+set number
+set foldmethod=indent
+set foldenable
+set undodir=~/.config/nvim/undos,.,/tmp
+set undofile
+
+nmap <C-Space>  i<Space><Esc>
+nmap <C-x><C-s> :w<Enter>
+nmap <C-BS> db
+imap <C-x><C-s> <Esc>:w<Enter>i
+imap <C-BS> <Esc>dbi
+imap <BS> <Esc>s
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <S-Q>  <S-A>
+nmap <silent> <F9> :execute "cd ".expand("%:h")<Enter>
+nmap <Tab>  >>
+nmap <S-Tab>  <<
+
+set autoindent
+set smartindent
+
+set colorcolumn=81
+let g:load_doxygen_syntax=1
+
+if !exists("autocommands_pol_loaded")
+  let autocommands_pol_loaded = 1
+  augroup POL
+  autocmd VimLeave *.* mksession! $HOME/.config/nvim/session.vim
+  augroup END
+endif
+
+function! Incr()
+  let a = line('.') - line("'<")
+  let c = virtcol("'<")
+  if a > 0
+    execute 'normal! '.c.'|'.a."\<C-a>"
+  endif
+  normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
+
+let g:pyclewn_python="python3"
+set makeprg=./waf
+set errorformat=
+set errorformat+=%f:%l:%c:%m
+set errorformat+=%DWaf:\ Entering\ directory\ `%f'
+set errorformat+=%XWaf:\ Leaving\ directory
+
+set bdir=/home/pol/.local/share/vim/backup
+
