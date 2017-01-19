@@ -18,6 +18,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'https://github.com/junegunn/vim-easy-align.git'
 Plugin 'https://github.com/critiqjo/lldb.nvim.git'
 Plugin 'https://github.com/dag/vim-fish.git'
+Plugin 'gilligan/vim-lldb'
 call vundle#end()
 filetype plugin indent on
 
@@ -142,4 +143,7 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
+"let g:neomake_warning_sign = { 'text': '⚠', 'texthl': 'NeomakeWarningSign' }
+let g:neomake_warning_sign = { 'text': '◆', 'texthl': 'NeomakeWarningSign' }
+highlight NeomakeWarningSign ctermfg=58 guifg=Blue guibg=Grey
 set bdir=/home/pol/.local/share/vim/backup
