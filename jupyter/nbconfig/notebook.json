@@ -1,15 +1,16 @@
 {
   "load_extensions": {
-    "nb_anacondacloud/main": true,
+    "init_cell/main": true,
     "nb_conda/main": true,
-    "jupyter-js-widgets/extension": true,
-    "nbextensions_configurator/config_menu/main": true,
+    "collapsible_headings/main": true,
+    "nb_anacondacloud/main": true,
     "nbpresent/js/nbpresent.min": true,
     "codefolding/main": true,
-    "navigation-hotkeys/main": true,
+    "jupyter-js-widgets/extension": true,
     "python-markdown/main": true,
-    "init_cell/main": true,
-    "collapsible_headings/main": true,
-    "splitcell/splitcell": true
+    "contrib_nbextensions_help_item/main": true,
+    "navigation-hotkeys/main": true,
+    "splitcell/splitcell": true,
+    "nbextensions_configurator/config_menu/main": true
   }
 }

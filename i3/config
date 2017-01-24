@@ -9,9 +9,6 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec --no-startup-id /home/pol/.local/bin/screen.py
-exec i3-sensible-terminal
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -37,7 +34,7 @@ mode "$mode_launcher" {
     # bindsym g exec gnome-terminal -e nvim, mode "default"
     bindsym m exec firefox https://outlook.office.com/owa/?realm=picoseq.com, mode "default"
     bindsym r exec gnome-terminal -e ranger, mode "default"
-    bindsym s exec /home/pol/.local/bin/screen.py restart
+    bindsym s exec $HOME/.local/bin/screen.py restart
 
     bindsym Esc mode "default"
     bindsym Return mode "default"
@@ -46,7 +43,7 @@ mode "$mode_launcher" {
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id /home/pol/.local/bin/fuzzy_lock.py, mode "default"
+    bindsym l exec --no-startup-id $HOME/.local/bin/fuzzy_lock.py, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id i3lock -c "#000000" && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
@@ -60,8 +57,8 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec python3 /home/pol/.local/bin/backlight.py +
-bindsym XF86MonBrightnessDown exec python3 /home/pol/.local/bin/backlight.py -
+bindsym XF86MonBrightnessUp exec python3 $HOME/.local/bin/backlight.py +
+bindsym XF86MonBrightnessDown exec python3 $HOME/.local/bin/backlight.py -
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -198,8 +195,10 @@ bar {
         tray_output primary
 }
 
+exec --no-startup-id $HOME/.local/bin/screen.py
 exec --no-startup-id xsetroot -solid "#000000"
-exec --no-startup-id xautolock -time 5 -locker '/home/pol/.local/bin/fuzzy_lock.py' &
+exec --no-startup-id xautolock -time 5 -locker '$HOME/.local/bin/fuzzy_lock.py' &
+exec i3-sensible-terminal
 #exec --no-startup-id fish  -c"set -x QT_QPA_PLATFORMTHEME; begin; pgrep seaf; or seafile-applet &; end;"
 
 for_window [instance="gnome-terminal"] border pixel 1

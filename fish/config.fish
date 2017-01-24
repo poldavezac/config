@@ -1,12 +1,12 @@
 # added by Miniconda3 4.0.5 installer
-set -x PATH /home/pol/miniconda3/bin $PATH
+set -x PATH $HOME/miniconda3/bin $PATH
 set -x LD_LIBRARY_PATH ./ $LD_LIBRARY_PATH
 set -x PYTHONPATH . src build $PYTHONPATH
-set -x MYPYPATH /home/pol/.config/mypy/
+set -x MYPYPATH $HOME/.config/mypy/
 set -x EDITOR nvim
 set -x QT_QPA_PLATFORMTHEME
 set -x JULIA_LOAD_PATH  ./ $JULIA_LOAD_PATH 
-source /home/pol/.config/fish/conda.fish
+source $HOME/.config/fish/conda.fish
 
 set normal (set_color normal)
 set magenta (set_color magenta)

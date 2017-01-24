@@ -146,4 +146,4 @@ let g:airline_symbols.whitespace = 'Ξ'
 "let g:neomake_warning_sign = { 'text': '⚠', 'texthl': 'NeomakeWarningSign' }
 let g:neomake_warning_sign = { 'text': '◆', 'texthl': 'NeomakeWarningSign' }
 highlight NeomakeWarningSign ctermfg=58 guifg=Blue guibg=Grey
-set bdir=/home/pol/.local/share/vim/backup
+set bdir=$HOME/.local/share/vim/backup
