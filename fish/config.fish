@@ -2,6 +2,7 @@
 set -x PATH $HOME/miniconda3/bin $PATH
 set -x LD_LIBRARY_PATH ./ $LD_LIBRARY_PATH
 set -x PYTHONPATH . src build $PYTHONPATH
+set -x PYTHONPATH "./:../"
 set -x MYPYPATH $HOME/.config/mypy/
 set -x EDITOR nvim
 set -x QT_QPA_PLATFORMTHEME
