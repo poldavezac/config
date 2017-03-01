@@ -7,6 +7,8 @@
       "nb_conda": true,
       "ipyparallel.nbextension": true
     },
-    "kernel_spec_manager_class": "nb_conda_kernels.CondaKernelSpecManager"
+    "kernel_spec_manager_class": "nb_conda_kernels.CondaKernelSpecManager",
+    "token": "",
+    "password": ""
   }
 }
