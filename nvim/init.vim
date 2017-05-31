@@ -9,7 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'fugitive.vim'
 Plugin 'Gundo'
-"Plugin 'pyclewn'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'benekastah/neomake'
@@ -18,7 +17,10 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'https://github.com/junegunn/vim-easy-align.git'
 Plugin 'https://github.com/critiqjo/lldb.nvim.git'
 Plugin 'https://github.com/dag/vim-fish.git'
+Plugin 'https://github.com/airodactyl/neovim-ranger.git'
 Plugin 'gilligan/vim-lldb'
+Plugin 'roxma/nvim-completion-manager'
+Plugin 'brooth/far.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -52,6 +54,8 @@ nmap <silent> <F9> :execute "cd ".expand("%:h")<Enter>
 nmap <Tab>  >>
 nmap <S-Tab>  <<
 tnoremap <Esc> <C-\><C-n>
+
+command IPy :15split term://ipython3
 
 set autoindent
 set smartindent
@@ -147,3 +151,17 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:neomake_warning_sign = { 'text': '◆', 'texthl': 'NeomakeWarningSign' }
 highlight NeomakeWarningSign ctermfg=58 guifg=Blue guibg=Grey
 set bdir=$HOME/.local/share/vim/backup
+
+function! LLMapping()
+    nnoremap <buffer> <M-b> <Plug>LLBreakSwitch
+    vnoremap <buffer> <F2> <Plug>LLStdInSelected
+    nnoremap <buffer> <F4> :LLstdin<CR>
+    nnoremap <buffer> <F5> :LLmode debug<CR>
+    nnoremap <buffer> <S-F5> :LLmode code<CR>
+    nnoremap <buffer> <F6> :LL next<CR>
+    nnoremap <buffer> <F7> :LL step<CR>
+    nnoremap <buffer> <F8> :LL continue<CR>
+    nnoremap <buffer> <S-F8> :LL process interrupt<CR>
+    nnoremap <buffer> <F9> :LL print <C-R>=expand('<cword>')<CR>
+    vnoremap <buffer> <F9> :<C-U>LL print <C-R>=lldb#util#get_selection()<CR><CR>
+endfunction

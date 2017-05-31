@@ -34,7 +34,7 @@ mode "$mode_launcher" {
     # bindsym g exec gnome-terminal -e nvim, mode "default"
     bindsym m exec firefox https://outlook.office.com/owa/?realm=picoseq.com, mode "default"
     bindsym r exec gnome-terminal -e ranger, mode "default"
-    bindsym s exec $HOME/.local/bin/screen.py restart
+    bindsym s exec $HOME/.local/bin/screen.py, mode "default"
 
     bindsym Esc mode "default"
     bindsym Return mode "default"
@@ -201,5 +201,5 @@ exec --no-startup-id xautolock -time 5 -locker '$HOME/.local/bin/fuzzy_lock.py' 
 exec i3-sensible-terminal
 #exec --no-startup-id fish  -c"set -x QT_QPA_PLATFORMTHEME; begin; pgrep seaf; or seafile-applet &; end;"
 
-for_window [instance="gnome-terminal"] border pixel 1
-for_window [class="Firefox" instance="Navigator"] border pixel 1
+for_window [instance="gnome-terminal"] border pixel 2
+for_window [class="Firefox" instance="Navigator"] border pixel 2
